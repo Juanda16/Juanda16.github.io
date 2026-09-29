@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Juan Arismendy — Ingeniero de Software y Hardware enfocado en IA",
+    "description": "Portafolio de Juan Arismendy: ingeniero de software y hardware que construye productos móviles, backend, de IA y robótica. Flutter, Python, Node.js, C++ y más.",
+    "ogLocale": "es_CO",
+    "ogLocaleAlt": "en_US"
+  },
+  "a11y": {
+    "skip": "Saltar al contenido",
+    "nav": "Navegación principal",
+    "language": "Idioma",
+    "menu": "Menú",
+    "toLight": "Cambiar a tema claro",
+    "toDark": "Cambiar a tema oscuro"
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "skills": "Skills",
+    "projects": "Proyectos",
+    "publications": "Publicaciones",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "role": "Ingeniero de Software y Hardware enfocado en IA",
+    "stack": "Móvil · Backend · IA · Electrónica y Robótica",
+    "tagline": "Construyo productos de principio a fin: desde firmware y circuitos hasta apps móviles, backends y flujos de trabajo asistidos por IA.",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Contáctame",
+    "highlights": [
+      { "value": "17+", "label": "años construyendo software y hardware" },
+      { "value": "Top 10", "label": "en descargas de apps cripto en Latinoamérica" },
+      { "value": "500+", "label": "descargas en ~1,5 meses en mi propia startup" }
+    ]
+  },
+  "about": {
+    "title": "Sobre mí",
+    "p1": "Soy ingeniero de software y hardware con más de 17 años de experiencia construyendo cosas que corren en teléfonos, servidores y microcontroladores. Empecé en electrónica y automatización industrial, y luego pasé a desarrollo móvil, backend y desarrollo asistido por IA.",
+    "p2": "Me importan la arquitectura limpia, las pruebas y las entregas confiables. He liderado equipos, publicado apps de Android e iOS en producción, trabajado con equipos internacionales bajo Scrum y configurado pipelines de CI/CD.",
+    "p3": "También disfruto la enseñanza y la investigación: he enseñado robótica y electrónica, publicado artículos técnicos y acompaño a ingenieros que se preparan para entrevistas técnicas. La robótica sigue siendo una pasión.",
+    "facts": [
+      { "label": "Estudios", "value": "Ingeniero de Sistemas · Tecnólogo en Mecatrónica" },
+      { "label": "Idiomas", "value": "Español (nativo) · Inglés (profesional completo)" },
+      { "label": "Enfoque", "value": "Móvil, backend, desarrollo asistido por IA, sistemas embebidos y robótica" }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "intro": "Las herramientas y tecnologías que más uso, agrupadas por área.",
+    "groups": {
+      "mobile": "Móvil",
+      "backend": "Backend y Web",
+      "ai": "IA y Datos",
+      "blockchain": "Blockchain",
+      "practices": "Prácticas y herramientas",
+      "hardware": "Hardware y Robótica"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "intro": "Una selección de lo que he construido, ordenada por relevancia. Algunos fueron para clientes y su código fuente es privado.",
+    "viewRepo": "Ver repositorio en GitHub:",
+    "private": "Código privado",
+    "items": {
+      "tokenpad": {
+        "kind": "App en producción",
+        "title": "Tokenpad — app móvil de criptomonedas",
+        "desc": "Lideré el equipo y el desarrollo de una app en Flutter para iOS y Android con Clean Architecture y TDD. Llegó al top 10 de apps cripto más descargadas en Latinoamérica. Mantuve los pipelines de CI/CD y la revisión de código en un equipo distribuido."
+      },
+      "lexipol": {
+        "kind": "App en producción",
+        "title": "Lexipol — app para primeros respondientes",
+        "desc": "Desarrollé apps iOS, Android y web con Flutter y Clean Architecture para primeros respondientes en EE. UU. Pruebas unitarias y de widgets, revisión de código y pipelines, con un equipo internacional bajo Scrum."
+      },
+      "headspace": {
+        "kind": "App en producción",
+        "title": "Headspace — app móvil",
+        "desc": "Desarrollo móvil senior en la app de Headspace, dentro de un equipo distribuido."
+      },
+      "mobe": {
+        "kind": "Startup",
+        "title": "Mobe — startup móvil cofundada",
+        "desc": "Tomé todas las decisiones técnicas y construí el producto desde el diseño hasta el lanzamiento. Superó las 500 descargas en mes y medio."
+      },
+      "ram": {
+        "kind": "Investigación en robótica",
+        "title": "RAM — robot de asistencia médica (Covid-19)",
+        "desc": "Electrónica, front end, back end y código de control de un robot para asistir en el cuidado de pacientes durante la contingencia del Covid-19."
+      },
+      "cnc": {
+        "kind": "Investigación en robótica",
+        "title": "Máquina CNC para materiales blandos",
+        "desc": "Conversión y desarrollo tecnológico de una máquina herramienta CNC para mecanizar materiales blandos, aplicando robótica, microcontroladores y software de control."
+      },
+      "tennis": {
+        "kind": "Proyecto personal",
+        "title": "Reserva de canchas de tenis",
+        "desc": "App en Flutter para programar y gestionar reservas de canchas de tenis."
+      },
+      "hotel": {
+        "kind": "Proyecto personal",
+        "title": "Predicción de cancelaciones en hoteles",
+        "desc": "Análisis y modelo de machine learning para predecir cancelaciones en reservas de hotel."
+      },
+      "digits": {
+        "kind": "Proyecto personal",
+        "title": "Reconocedor de dígitos con IA",
+        "desc": "Reconocimiento de dígitos manuscritos con una red neuronal, desarrollado en un notebook de Jupyter."
+      },
+      "voting": {
+        "kind": "Proyecto personal",
+        "title": "Votación en blockchain",
+        "desc": "Contrato inteligente de votación escrito en Solidity."
+      }
+    }
+  },
+  "publications": {
+    "title": "Publicaciones"
+  },
+  "certifications": {
+    "title": "Certificaciones"
+  },
+  "contact": {
+    "title": "Contacto",
+    "text": "Siempre dispuesto a una buena conversación sobre móvil, backend, IA o robótica. La mejor forma de contactarme es por correo o LinkedIn.",
+    "email": "Escríbeme"
+  },
+  "footer": {
+    "text": "© {year} Juan Arismendy. Hecho con HTML, CSS y JavaScript puro.",
+    "top": "Volver arriba"
+  }
+}

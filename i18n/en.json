@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Juan Arismendy — AI-Forward Software & Hardware Engineer",
+    "description": "Portfolio of Juan Arismendy: software and hardware engineer building mobile, backend, AI and robotics products. Flutter, Python, Node.js, C++ and more.",
+    "ogLocale": "en_US",
+    "ogLocaleAlt": "es_CO"
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "nav": "Main navigation",
+    "language": "Language",
+    "menu": "Menu",
+    "toLight": "Switch to light theme",
+    "toDark": "Switch to dark theme"
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "publications": "Publications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "AI-Forward Software & Hardware Engineer",
+    "stack": "Mobile · Backend · AI · Electronics & Robotics",
+    "tagline": "I build products end to end, from firmware and circuits to mobile apps, backends and AI-assisted workflows.",
+    "ctaProjects": "See projects",
+    "ctaContact": "Get in touch",
+    "highlights": [
+      { "value": "17+", "label": "years building software and hardware" },
+      { "value": "Top 10", "label": "crypto app downloads in Latin America" },
+      { "value": "500+", "label": "downloads in ~1.5 months for my own startup" }
+    ]
+  },
+  "about": {
+    "title": "About me",
+    "p1": "I'm a software and hardware engineer with more than 17 years of experience building things that run on phones, servers and microcontrollers. I started in electronics and industrial automation, then moved into mobile, backend and AI-assisted development.",
+    "p2": "I care about clean architecture, tests and reliable delivery. I've led teams, shipped Android and iOS apps to production, worked with international teams under Scrum, and set up CI/CD pipelines.",
+    "p3": "I also enjoy teaching and research: I've taught robotics and electronics, published technical articles, and coach engineers preparing for technical interviews. Robotics remains a passion.",
+    "facts": [
+      { "label": "Education", "value": "B.Eng. in Systems Engineering · Technologist in Mechatronics" },
+      { "label": "Languages", "value": "Spanish (native) · English (full professional)" },
+      { "label": "Focus", "value": "Mobile, backend, AI-assisted development, embedded systems and robotics" }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "intro": "The tools and technologies I use most, grouped by area.",
+    "groups": {
+      "mobile": "Mobile",
+      "backend": "Backend & Web",
+      "ai": "AI & Data",
+      "blockchain": "Blockchain",
+      "practices": "Practices & Tooling",
+      "hardware": "Hardware & Robotics"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "intro": "A selection of what I've built, ordered by relevance. Some were built for clients and their source code is private.",
+    "viewRepo": "View repository on GitHub:",
+    "private": "Private source",
+    "items": {
+      "tokenpad": {
+        "kind": "Production app",
+        "title": "Tokenpad — crypto mobile app",
+        "desc": "Led the team and the development of a Flutter app for iOS and Android with Clean Architecture and TDD. It became a top 10 crypto app by downloads in Latin America. Maintained CI/CD pipelines and code review across a distributed team."
+      },
+      "lexipol": {
+        "kind": "Production app",
+        "title": "Lexipol — first responders app",
+        "desc": "Built iOS, Android and web apps with Flutter and Clean Architecture for first responders in the USA. Unit and widget tests, code review and pipelines, with an international team working in Scrum."
+      },
+      "headspace": {
+        "kind": "Production app",
+        "title": "Headspace — mobile app",
+        "desc": "Senior mobile engineering on the Headspace app as part of a distributed team."
+      },
+      "mobe": {
+        "kind": "Startup",
+        "title": "Mobe — co-founded mobile startup",
+        "desc": "Made every technical decision and built the product from design to release. It reached more than 500 downloads in about a month and a half."
+      },
+      "ram": {
+        "kind": "Robotics research",
+        "title": "RAM — medical-assistance robot (Covid-19)",
+        "desc": "Electronics, front end, back end and control code for a robot to assist in patient care during the Covid-19 contingency."
+      },
+      "cnc": {
+        "kind": "Robotics research",
+        "title": "CNC machine for soft materials",
+        "desc": "Conversion and technological development of a CNC machine tool for machining soft materials, applying robotics, microcontrollers and control software."
+      },
+      "tennis": {
+        "kind": "Personal project",
+        "title": "Tennis court scheduling",
+        "desc": "Flutter app to schedule and manage tennis court reservations."
+      },
+      "hotel": {
+        "kind": "Personal project",
+        "title": "Hotel cancellation prediction",
+        "desc": "Machine learning analysis and model to predict cancellations in hotel bookings."
+      },
+      "digits": {
+        "kind": "Personal project",
+        "title": "AI digit recognizer",
+        "desc": "Handwritten digit recognition with a neural network, developed in a Jupyter notebook."
+      },
+      "voting": {
+        "kind": "Personal project",
+        "title": "Blockchain voting",
+        "desc": "Voting smart contract written in Solidity."
+      }
+    }
+  },
+  "publications": {
+    "title": "Publications"
+  },
+  "certifications": {
+    "title": "Certifications"
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "Always up for a good conversation about mobile, backend, AI or robotics. The best way to reach me is by email or LinkedIn.",
+    "email": "Email me"
+  },
+  "footer": {
+    "text": "© {year} Juan Arismendy. Built with plain HTML, CSS and JavaScript.",
+    "top": "Back to top"
+  }
+}

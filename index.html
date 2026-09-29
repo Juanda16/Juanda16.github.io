@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Arismendy — AI-Forward Software &amp; Hardware Engineer</title>
+  <meta name="description" id="meta-description" content="Portfolio of Juan Arismendy: software and hardware engineer building mobile, backend, AI and robotics products.">
+  <meta name="author" content="Juan Arismendy">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fafaf9">
+
+  <link rel="canonical" href="https://juanda16.github.io/">
+  <link rel="alternate" hreflang="en" href="https://juanda16.github.io/?lang=en">
+  <link rel="alternate" hreflang="es" href="https://juanda16.github.io/?lang=es">
+  <link rel="alternate" hreflang="x-default" href="https://juanda16.github.io/">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Juan Arismendy">
+  <meta property="og:url" content="https://juanda16.github.io/">
+  <meta property="og:title" id="og-title" content="Juan Arismendy — AI-Forward Software &amp; Hardware Engineer">
+  <meta property="og:description" id="og-description" content="Portfolio of Juan Arismendy: software and hardware engineer building mobile, backend, AI and robotics products.">
+  <meta property="og:image" content="https://juanda16.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Juan Arismendy — AI-Forward Software and Hardware Engineer">
+  <meta property="og:locale" id="og-locale" content="en_US">
+  <meta property="og:locale:alternate" id="og-locale-alt" content="es_CO">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    // Apply the theme before first paint to avoid a flash.
+    (function () {
+      var root = document.documentElement;
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.dataset.theme = theme;
+      root.classList.add('is-loading');
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container bar">
+      <a class="brand" href="#top" aria-label="Juan Arismendy">
+        <span class="brand-mark" aria-hidden="true">JA</span>
+        <span class="brand-name">Juan Arismendy</span>
+      </a>
+
+      <nav id="site-nav" class="site-nav" data-i18n-attr="aria-label:a11y.nav" aria-label="Main">
+        <ul>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="controls">
+        <div class="lang-toggle" role="group" data-i18n-attr="aria-label:a11y.language" aria-label="Language">
+          <button type="button" data-lang-btn="en" lang="en" aria-pressed="true" title="English">EN</button>
+          <button type="button" data-lang-btn="es" lang="es" aria-pressed="false" title="Español">ES</button>
+        </div>
+
+        <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch theme">
+          <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        </button>
+
+        <button type="button" id="menu-toggle" class="icon-btn menu-btn" aria-expanded="false" aria-controls="site-nav" data-i18n-attr="aria-label:a11y.menu" aria-label="Menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <noscript>
+      <p class="container noscript">
+        This site needs JavaScript to show its content. / Este sitio necesita JavaScript para mostrar su contenido.
+        <a href="https://github.com/Juanda16">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/juanarismendy16/">LinkedIn</a>
+      </p>
+    </noscript>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <p class="eyebrow" data-i18n="hero.greeting">Hi, I'm</p>
+        <h1 id="hero-title">Juan Arismendy</h1>
+        <p class="hero-role" data-i18n="hero.role">AI-Forward Software &amp; Hardware Engineer</p>
+        <p class="hero-stack" data-i18n="hero.stack">Mobile · Backend · AI · Electronics &amp; Robotics</p>
+        <p class="hero-tagline" data-i18n="hero.tagline"></p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects" data-i18n="hero.ctaProjects">See projects</a>
+          <a class="btn btn-ghost" href="#contact" data-i18n="hero.ctaContact">Get in touch</a>
+        </div>
+        <ul class="highlights" id="hero-highlights"></ul>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section-title" data-i18n="about.title">About me</h2>
+        <div class="about-grid">
+          <div class="prose">
+            <p data-i18n="about.p1"></p>
+            <p data-i18n="about.p2"></p>
+            <p data-i18n="about.p3"></p>
+          </div>
+          <dl class="facts" id="about-facts"></dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title" class="section-title" data-i18n="skills.title">Skills</h2>
+        <p class="section-intro" data-i18n="skills.intro"></p>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title" class="section-title" data-i18n="projects.title">Projects</h2>
+        <p class="section-intro" data-i18n="projects.intro"></p>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section id="publications" class="section section-alt" aria-labelledby="pubs-title">
+      <div class="container two-col">
+        <div>
+          <h2 id="pubs-title" class="section-title" data-i18n="publications.title">Publications</h2>
+          <ul class="plain-list" id="pubs-list"></ul>
+        </div>
+        <div>
+          <h2 id="certs-title" class="section-title" data-i18n="certifications.title">Certifications</h2>
+          <ul class="plain-list" id="certs-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container contact">
+        <h2 id="contact-title" class="section-title" data-i18n="contact.title">Contact</h2>
+        <p class="section-intro" data-i18n="contact.text"></p>
+        <ul class="contact-links">
+          <li><a class="btn btn-primary" href="mailto:juand16@gmail.com"><span data-i18n="contact.email">Email</span><span class="sr-only">: juand16@gmail.com</span></a></li>
+          <li><a class="btn btn-ghost" href="https://www.linkedin.com/in/juanarismendy16/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a class="btn btn-ghost" href="https://github.com/Juanda16" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+        <p class="contact-mail"><a href="mailto:juand16@gmail.com">juand16@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p data-i18n="footer.text"></p>
+      <p><a href="#top" data-i18n="footer.top">Back to top</a></p>
+    </div>
+  </footer>
+</body>
+</html>

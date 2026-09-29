@@ -1,0 +1,14 @@
+{
+  "publications": [
+    { "title": "Compendio de proyectos tecnológicos formativos: la importancia de la formación", "note": "ISBN 978-958-98043-4-6" },
+    { "title": "Implementation and Technical Testing of a Robot for Future Use in Patients Care (Covid-19)" },
+    { "title": "Technological Development of CNC Machine Tool for Machining Soft Materials" },
+    { "title": "Aplicación de los conocimientos de robótica para la construcción de un humanoide" }
+  ],
+  "certifications": [
+    { "title": "Python esencial" },
+    { "title": "Introduction to SQLite" },
+    { "title": "Server-side Development with NodeJS, Express and MongoDB" },
+    { "title": "The Complete 2021 Flutter Development Bootcamp with Dart" }
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  { "id": "mobile", "items": ["Dart", "Flutter", "Android", "Riverpod", "Bloc / Cubit", "Provider", "GetX", "Firebase"] },
+  { "id": "backend", "items": ["Python", "Django", "Node.js", "Express", "MongoDB", "SQLite", "HTML"] },
+  { "id": "ai", "items": ["Anthropic Claude", "AI-assisted development", "Machine Learning", "Jupyter"] },
+  { "id": "blockchain", "items": ["Solidity", "Crypto / wallet apps"] },
+  { "id": "practices", "items": ["Clean Architecture", "TDD", "Unit & widget testing", "CI/CD", "Bitrise", "Bitbucket Pipelines", "Git", "Scrum", "Jira", "Confluence", "New Relic", "AppsFlyer"] },
+  { "id": "hardware", "items": ["C++", "Arduino", "Raspberry Pi", "Nvidia Jetson Nano", "Microcontrollers", "Circuit design", "Eagle CAD", "Solid Edge", "SolidWorks", "Automation", "Robotics", "CNC"] }
+]
