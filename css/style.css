@@ -313,7 +313,7 @@ a:hover { color: var(--accent-strong); }
 @media (min-width: 40rem) {
   .brand-name { display: inline; }
   /* photo to the right of the name */
-  .hero-grid { grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 2.5rem; }
+  .hero-grid { grid-template-columns: minmax(0, 44rem) auto; justify-content: start; align-items: start; gap: 3rem; }
   .avatar { order: 0; width: 11rem; height: 11rem; margin-top: 1.5rem; }
   .highlights { grid-template-columns: repeat(3, 1fr); }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }

@@ -29,6 +29,8 @@ It must be served over HTTP (not `file://`) because the page loads JSON files wi
 
 To add a project: add an entry to `data/projects.json` and a matching `projects.items.<id>` block (`kind`, `title`, `desc`) in both i18n files.
 
+After changing any file, bump the version: `?v=` on the CSS/JS links in `index.html` and `VERSION` in `js/app.js`. GitHub Pages caches files for 10 minutes and this forces browsers to fetch the new ones.
+
 ## Language and theme
 
 - Initial language: `?lang=en|es` in the URL, else the saved choice (`localStorage`), else `navigator.language`.

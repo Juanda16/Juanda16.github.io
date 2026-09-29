@@ -50,8 +50,12 @@
     return nav.indexOf('es') === 0 ? 'es' : 'en';
   }
 
+  // GitHub Pages caches files for 10 minutes. Bump this value (and the ?v= in
+  // index.html) whenever you edit content, so visitors get the new files.
+  var VERSION = '3';
+
   function loadJSON(url) {
-    return fetch(url).then(function (r) {
+    return fetch(url + '?v=' + VERSION).then(function (r) {
       if (!r.ok) throw new Error(url + ' -> ' + r.status);
       return r.json();
     });
