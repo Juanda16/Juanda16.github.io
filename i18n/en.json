@@ -27,6 +27,7 @@
     "tagline": "I build products end to end, from firmware and circuits to mobile apps, backends and AI-assisted workflows.",
     "ctaProjects": "See projects",
     "ctaContact": "Get in touch",
+    "photoAlt": "Portrait of Juan Arismendy, wearing glasses and a white shirt",
     "highlights": [
       { "value": "17+", "label": "years building software and hardware" },
       { "value": "Top 10", "label": "crypto app downloads in Latin America" },

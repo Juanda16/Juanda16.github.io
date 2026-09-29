@@ -24,6 +24,7 @@ It must be served over HTTP (not `file://`) because the page loads JSON files wi
 | Skills | `data/skills.json` (group names in `skills.groups.<id>`) |
 | Publications / certifications | `data/publications.json` |
 | Page structure, contact links | `index.html` |
+| Profile photo | `assets/avatar.jpg` (square, 480×480); alt text in `hero.photoAlt` |
 | Colors, layout | `css/style.css` (CSS variables at the top) |
 
 To add a project: add an entry to `data/projects.json` and a matching `projects.items.<id>` block (`kind`, `title`, `desc`) in both i18n files.
