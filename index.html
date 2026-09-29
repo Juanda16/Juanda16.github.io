@@ -7,7 +7,7 @@
   <meta name="description" id="meta-description" content="Portfolio of Juan Arismendy: software and hardware engineer building mobile, backend, AI and robotics products.">
   <meta name="author" content="Juan Arismendy">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#fafaf9">
+  <meta name="theme-color" content="#f5f6f1">
 
   <link rel="canonical" href="https://juanda16.github.io/">
   <link rel="alternate" hreflang="en" href="https://juanda16.github.io/?lang=en">
@@ -42,8 +42,8 @@
       root.classList.add('is-loading');
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=3">
-  <script src="js/app.js?v=3" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <script src="js/app.js?v=4" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
@@ -70,6 +70,11 @@
           <button type="button" data-lang-btn="en" lang="en" aria-pressed="true" title="English">EN</button>
           <button type="button" data-lang-btn="es" lang="es" aria-pressed="false" title="Español">ES</button>
         </div>
+
+        <button type="button" id="palette-btn" class="icon-btn palette-btn" aria-haspopup="dialog" data-i18n-attr="aria-label:palette.open" aria-label="Open command palette">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m15 15 5.5 5.5"/></svg>
+          <kbd id="palette-kbd" aria-hidden="true">Ctrl K</kbd>
+        </button>
 
         <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch theme">
           <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
@@ -176,5 +181,14 @@
       <p><a href="#top" data-i18n="footer.top">Back to top</a></p>
     </div>
   </footer>
+
+  <dialog id="palette" class="palette" data-i18n-attr="aria-label:palette.title" aria-label="Command palette">
+    <input id="palette-input" class="palette-input" type="text" role="combobox" aria-expanded="true"
+           aria-controls="palette-list" aria-autocomplete="list" autocomplete="off" autocapitalize="off" spellcheck="false"
+           data-i18n-attr="placeholder:palette.placeholder;aria-label:palette.title" placeholder="Type a command…">
+    <ul id="palette-list" class="palette-list" role="listbox"></ul>
+    <p id="palette-output" class="palette-output" role="status" aria-live="polite"></p>
+    <p class="palette-hint" data-i18n="palette.hint"></p>
+  </dialog>
 </body>
 </html>

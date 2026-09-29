@@ -11,7 +11,8 @@
     "language": "Idioma",
     "menu": "Menú",
     "toLight": "Cambiar a tema claro",
-    "toDark": "Cambiar a tema oscuro"
+    "toDark": "Cambiar a tema oscuro",
+    "theme": "Tema: {name}. Clic para cambiar."
   },
   "nav": {
     "about": "Sobre mí",
@@ -29,9 +30,18 @@
     "ctaContact": "Contáctame",
     "photoAlt": "Retrato de Juan Arismendy, con lentes y camisa blanca",
     "highlights": [
-      { "value": "17+", "label": "años construyendo software y hardware" },
-      { "value": "Top 10", "label": "en descargas de apps cripto en Latinoamérica" },
-      { "value": "500+", "label": "descargas en ~1,5 meses en mi propia startup" }
+      {
+        "value": "17+",
+        "label": "años construyendo software y hardware"
+      },
+      {
+        "value": "Top 10",
+        "label": "en descargas de apps cripto en Latinoamérica"
+      },
+      {
+        "value": "500+",
+        "label": "descargas en ~1,5 meses en mi propia startup"
+      }
     ]
   },
   "about": {
@@ -40,9 +50,18 @@
     "p2": "Me importan la arquitectura limpia, las pruebas y las entregas confiables. He liderado equipos, publicado apps de Android e iOS en producción, trabajado con equipos internacionales bajo Scrum y configurado pipelines de CI/CD.",
     "p3": "También disfruto la enseñanza y la investigación: he enseñado robótica y electrónica, publicado artículos técnicos y acompaño a ingenieros que se preparan para entrevistas técnicas. La robótica sigue siendo una pasión.",
     "facts": [
-      { "label": "Estudios", "value": "Ingeniero de Sistemas · Tecnólogo en Mecatrónica" },
-      { "label": "Idiomas", "value": "Español (nativo) · Inglés (profesional completo)" },
-      { "label": "Enfoque", "value": "Móvil, backend, desarrollo asistido por IA, sistemas embebidos y robótica" }
+      {
+        "label": "Estudios",
+        "value": "Ingeniero de Sistemas · Tecnólogo en Mecatrónica"
+      },
+      {
+        "label": "Idiomas",
+        "value": "Español (nativo) · Inglés (profesional completo)"
+      },
+      {
+        "label": "Enfoque",
+        "value": "Móvil, backend, desarrollo asistido por IA, sistemas embebidos y robótica"
+      }
     ]
   },
   "skills": {
@@ -113,7 +132,8 @@
         "title": "Votación en blockchain",
         "desc": "Contrato inteligente de votación escrito en Solidity."
       }
-    }
+    },
+    "pinout": "Pinout"
   },
   "publications": {
     "title": "Publicaciones"
@@ -129,5 +149,29 @@
   "footer": {
     "text": "© {year} Juan Arismendy. Hecho con HTML, CSS y JavaScript puro.",
     "top": "Volver arriba"
+  },
+  "palette": {
+    "title": "Paleta de comandos",
+    "open": "Abrir paleta de comandos",
+    "placeholder": "Escribe un comando…",
+    "hint": "↑ ↓ para moverte · Enter para ejecutar · Esc para cerrar",
+    "empty": "Ningún comando coincide",
+    "go": "Ir a",
+    "goGroup": "Navegar",
+    "langGroup": "Idioma",
+    "themeGroup": "Tema",
+    "linkGroup": "Enlaces",
+    "openLinkedIn": "Abrir LinkedIn",
+    "openGitHub": "Abrir GitHub",
+    "copyEmail": "Copiar correo",
+    "copied": "Correo copiado al portapapeles.",
+    "copyFail": "No se pudo copiar. El correo es juand16@gmail.com",
+    "whoami": "juan — ingeniero de software y hardware enfocado en IA.\nDe circuitos a apps, una arquitectura limpia a la vez.",
+    "help": "Prueba: sobre mí · skills · proyectos · publicaciones · contacto\nEN / ES para cambiar de idioma · Ctrl/⌘ + K abre esta paleta.",
+    "helpGroup": "Info"
+  },
+  "themes": {
+    "light": "Papel",
+    "dark": "Plano técnico"
   }
 }

@@ -52,7 +52,7 @@
 
   // GitHub Pages caches files for 10 minutes. Bump this value (and the ?v= in
   // index.html) whenever you edit content, so visitors get the new files.
-  var VERSION = '3';
+  var VERSION = '4';
 
   function loadJSON(url) {
     return fetch(url + '?v=' + VERSION).then(function (r) {
@@ -108,6 +108,19 @@
     }));
   }
 
+  // Tech list drawn like an IC pinout (datasheet look).
+  function pinout(tags) {
+    return el('div', { className: 'pinout-wrap' }, [
+      el('p', { className: 'pinout-title', text: t('projects.pinout') }),
+      el('ol', { className: 'pinout' }, tags.map(function (tag, i) {
+        return el('li', {}, [
+          el('span', { className: 'pin-n', text: String(i + 1).padStart(2, '0'), attrs: { 'aria-hidden': 'true' } }),
+          el('span', { className: 'pin-s', text: tag })
+        ]);
+      }))
+    ]);
+  }
+
   function renderSkills() {
     var grid = $('#skills-grid');
     grid.textContent = '';
@@ -142,14 +155,16 @@
       }
 
       grid.appendChild(el('article', { className: 'project' }, [
-        el('div', { className: 'project-head' }, [
-          el('span', { className: 'project-num', text: String(i + 1).padStart(2, '0'), attrs: { 'aria-hidden': 'true' } }),
-          el('span', { className: 'project-kind', text: t(base + 'kind') })
+        el('div', { className: 'ds-head' }, [
+          el('span', { className: 'ds-ref', text: 'JA-' + String(i + 1).padStart(3, '0') + ' · REV A', attrs: { 'aria-hidden': 'true' } }),
+          el('span', { className: 'ds-kind', text: t(base + 'kind') })
         ]),
-        el('h3', { text: t(base + 'title') }),
-        el('p', { text: t(base + 'desc') }),
-        chips(p.tags),
-        footer
+        el('div', { className: 'ds-body' }, [
+          el('h3', { text: t(base + 'title') }),
+          el('p', { text: t(base + 'desc') }),
+          pinout(p.tags),
+          footer
+        ])
       ]));
     });
   }
@@ -176,15 +191,20 @@
   }
 
   /* ---------- theme ---------- */
+  var THEMES = ['light', 'dark'];
+  var THEME_COLORS = { light: '#f5f6f1', dark: '#0a1a2f' };
+
   function updateThemeButton() {
     var btn = $('#theme-toggle');
-    var dark = root.dataset.theme === 'dark';
-    btn.setAttribute('aria-label', t(dark ? 'a11y.toLight' : 'a11y.toDark'));
+    var theme = root.dataset.theme;
+    btn.setAttribute('aria-label', t('a11y.theme').replace('{name}', t('themes.' + theme)));
+    btn.title = btn.getAttribute('aria-label');
     var meta = $('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', dark ? '#0d1114' : '#fafaf9');
+    if (meta) meta.setAttribute('content', THEME_COLORS[theme] || THEME_COLORS.light);
   }
 
   function setTheme(theme, persist) {
+    if (THEMES.indexOf(theme) === -1) return;
     root.dataset.theme = theme;
     if (persist) safeSet('theme', theme);
     updateThemeButton();
@@ -192,7 +212,8 @@
 
   function initTheme() {
     $('#theme-toggle').addEventListener('click', function () {
-      setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true);
+      var next = THEMES[(THEMES.indexOf(root.dataset.theme) + 1) % THEMES.length];
+      setTheme(next, true);
     });
     // Follow OS changes while the user has not chosen a theme manually.
     if (window.matchMedia) {
@@ -217,6 +238,133 @@
     });
   }
 
+  /* ---------- command palette (Ctrl/Cmd + K) ---------- */
+  var pal = { dialog: null, input: null, list: null, out: null, items: [], active: 0 };
+
+  function norm(str) {
+    return String(str).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function openUrl(url) { window.open(url, '_blank', 'noopener,noreferrer'); }
+
+  function commandList() {
+    var cmds = [];
+    [['about', 'nav.about'], ['skills', 'nav.skills'], ['projects', 'nav.projects'],
+     ['publications', 'nav.publications'], ['contact', 'nav.contact']].forEach(function (n) {
+      cmds.push({
+        label: t('palette.go') + ' ' + t(n[1]), group: t('palette.goGroup'),
+        keys: n[0] + ' go ir ' + t(n[1]),
+        run: function () { window.location.hash = '#' + n[0]; }
+      });
+    });
+    LANGS.forEach(function (l) {
+      cmds.push({
+        label: l === 'en' ? 'English' : 'Español', group: t('palette.langGroup'),
+        keys: l + ' language idioma', run: function () { setLang(l, true); }
+      });
+    });
+    THEMES.forEach(function (th) {
+      cmds.push({
+        label: t('themes.' + th), group: t('palette.themeGroup'),
+        keys: 'theme tema ' + th, run: function () { setTheme(th, true); }
+      });
+    });
+    cmds.push({ label: t('palette.openGitHub'), group: t('palette.linkGroup'), keys: 'github', run: function () { openUrl('https://github.com/Juanda16'); } });
+    cmds.push({ label: t('palette.openLinkedIn'), group: t('palette.linkGroup'), keys: 'linkedin', run: function () { openUrl('https://www.linkedin.com/in/juanarismendy16/'); } });
+    cmds.push({
+      label: t('palette.copyEmail'), group: t('palette.linkGroup'), keys: 'email correo mail copy copiar', keep: true,
+      run: function () {
+        var done = function (msg) { pal.out.textContent = msg; };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText('juand16@gmail.com').then(function () { done(t('palette.copied')); }, function () { done(t('palette.copyFail')); });
+        } else { done(t('palette.copyFail')); }
+      }
+    });
+    cmds.push({ label: 'whoami', group: t('palette.helpGroup'), keys: 'who quien', keep: true, run: function () { pal.out.textContent = t('palette.whoami'); } });
+    cmds.push({ label: 'help', group: t('palette.helpGroup'), keys: 'ayuda ?', keep: true, run: function () { pal.out.textContent = t('palette.help'); } });
+    return cmds;
+  }
+
+  function renderPalette() {
+    var words = norm(pal.input.value).split(/\s+/).filter(Boolean);
+    pal.items = commandList().filter(function (c) {
+      var hay = norm(c.label + ' ' + c.keys + ' ' + c.group);
+      return words.every(function (w) { return hay.indexOf(w) !== -1; });
+    });
+    if (pal.active >= pal.items.length) pal.active = 0;
+    pal.list.textContent = '';
+    if (!pal.items.length) {
+      pal.list.appendChild(el('li', { className: 'palette-empty', text: t('palette.empty'), attrs: { role: 'presentation' } }));
+    }
+    pal.items.forEach(function (c, i) {
+      var li = el('li', {
+        className: 'palette-item',
+        attrs: { role: 'option', id: 'palette-opt-' + i, 'aria-selected': String(i === pal.active) }
+      }, [el('span', { text: c.label }), el('small', { text: c.group })]);
+      li.addEventListener('click', function () { runCommand(i); });
+      li.addEventListener('mousemove', function () { if (pal.active !== i) { pal.active = i; markActive(); } });
+      pal.list.appendChild(li);
+    });
+    markActive(true);
+  }
+
+  function markActive(noScroll) {
+    $$('.palette-item', pal.list).forEach(function (li, i) {
+      li.setAttribute('aria-selected', String(i === pal.active));
+      if (i === pal.active && !noScroll) li.scrollIntoView({ block: 'nearest' });
+    });
+    if (pal.items.length) pal.input.setAttribute('aria-activedescendant', 'palette-opt-' + pal.active);
+    else pal.input.removeAttribute('aria-activedescendant');
+  }
+
+  function runCommand(i) {
+    var c = pal.items[i];
+    if (!c) return;
+    if (c.keep) { c.run(); return; }
+    pal.dialog.close();
+    c.run();
+  }
+
+  function openPalette() {
+    if (pal.dialog.open) return;
+    pal.input.value = '';
+    pal.out.textContent = '';
+    pal.active = 0;
+    pal.dialog.showModal();
+    renderPalette();
+    pal.input.focus();
+  }
+
+  function initPalette() {
+    pal.dialog = $('#palette');
+    if (!pal.dialog || typeof pal.dialog.showModal !== 'function') {
+      var b = $('#palette-btn'); if (b) b.hidden = true;
+      return;
+    }
+    pal.input = $('#palette-input');
+    pal.list = $('#palette-list');
+    pal.out = $('#palette-output');
+
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent || '');
+    $('#palette-kbd').textContent = isMac ? '⌘K' : 'Ctrl K';
+
+    $('#palette-btn').addEventListener('click', openPalette);
+    pal.input.addEventListener('input', function () { pal.active = 0; pal.out.textContent = ''; renderPalette(); });
+    pal.input.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); if (pal.items.length) { pal.active = (pal.active + 1) % pal.items.length; markActive(); } }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); if (pal.items.length) { pal.active = (pal.active - 1 + pal.items.length) % pal.items.length; markActive(); } }
+      else if (e.key === 'Enter') { e.preventDefault(); runCommand(pal.active); }
+    });
+    // click on the backdrop closes the dialog
+    pal.dialog.addEventListener('click', function (e) { if (e.target === pal.dialog) pal.dialog.close(); });
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (pal.dialog.open) pal.dialog.close(); else openPalette();
+      }
+    });
+  }
+
   /* ---------- apply language ---------- */
   function setLang(lang, persist) {
     return loadLang(lang).then(function () {
@@ -229,6 +377,7 @@
       applyStatic();
       renderDynamic();
       updateThemeButton();
+      if (pal.dialog && pal.dialog.open) renderPalette();
       root.classList.remove('is-loading');
     });
   }
@@ -253,6 +402,7 @@
     initTheme();
     initMenu();
     initLangToggle();
+    initPalette();
 
     var lang = initialLang();
     Promise.all([

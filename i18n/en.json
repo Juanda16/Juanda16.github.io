@@ -11,7 +11,8 @@
     "language": "Language",
     "menu": "Menu",
     "toLight": "Switch to light theme",
-    "toDark": "Switch to dark theme"
+    "toDark": "Switch to dark theme",
+    "theme": "Theme: {name}. Click to change."
   },
   "nav": {
     "about": "About",
@@ -29,9 +30,18 @@
     "ctaContact": "Get in touch",
     "photoAlt": "Portrait of Juan Arismendy, wearing glasses and a white shirt",
     "highlights": [
-      { "value": "17+", "label": "years building software and hardware" },
-      { "value": "Top 10", "label": "crypto app downloads in Latin America" },
-      { "value": "500+", "label": "downloads in ~1.5 months for my own startup" }
+      {
+        "value": "17+",
+        "label": "years building software and hardware"
+      },
+      {
+        "value": "Top 10",
+        "label": "crypto app downloads in Latin America"
+      },
+      {
+        "value": "500+",
+        "label": "downloads in ~1.5 months for my own startup"
+      }
     ]
   },
   "about": {
@@ -40,9 +50,18 @@
     "p2": "I care about clean architecture, tests and reliable delivery. I've led teams, shipped Android and iOS apps to production, worked with international teams under Scrum, and set up CI/CD pipelines.",
     "p3": "I also enjoy teaching and research: I've taught robotics and electronics, published technical articles, and coach engineers preparing for technical interviews. Robotics remains a passion.",
     "facts": [
-      { "label": "Education", "value": "B.Eng. in Systems Engineering · Technologist in Mechatronics" },
-      { "label": "Languages", "value": "Spanish (native) · English (full professional)" },
-      { "label": "Focus", "value": "Mobile, backend, AI-assisted development, embedded systems and robotics" }
+      {
+        "label": "Education",
+        "value": "B.Eng. in Systems Engineering · Technologist in Mechatronics"
+      },
+      {
+        "label": "Languages",
+        "value": "Spanish (native) · English (full professional)"
+      },
+      {
+        "label": "Focus",
+        "value": "Mobile, backend, AI-assisted development, embedded systems and robotics"
+      }
     ]
   },
   "skills": {
@@ -113,7 +132,8 @@
         "title": "Blockchain voting",
         "desc": "Voting smart contract written in Solidity."
       }
-    }
+    },
+    "pinout": "Pinout"
   },
   "publications": {
     "title": "Publications"
@@ -129,5 +149,29 @@
   "footer": {
     "text": "© {year} Juan Arismendy. Built with plain HTML, CSS and JavaScript.",
     "top": "Back to top"
+  },
+  "palette": {
+    "title": "Command palette",
+    "open": "Open command palette",
+    "placeholder": "Type a command…",
+    "hint": "↑ ↓ to move · Enter to run · Esc to close",
+    "empty": "No matching command",
+    "go": "Go to",
+    "goGroup": "Navigate",
+    "langGroup": "Language",
+    "themeGroup": "Theme",
+    "linkGroup": "Links",
+    "openLinkedIn": "Open LinkedIn",
+    "openGitHub": "Open GitHub",
+    "copyEmail": "Copy email address",
+    "copied": "Email copied to clipboard.",
+    "copyFail": "Could not copy. The address is juand16@gmail.com",
+    "whoami": "juan — AI-forward software & hardware engineer.\nFrom circuits to apps, one clean architecture at a time.",
+    "help": "Try: about · skills · projects · publications · contact\nEN / ES to switch language · Ctrl/⌘ + K to open this palette.",
+    "helpGroup": "Info"
+  },
+  "themes": {
+    "light": "Paper",
+    "dark": "Blueprint"
   }
 }
