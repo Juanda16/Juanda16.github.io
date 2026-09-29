@@ -52,7 +52,7 @@
 
   // GitHub Pages caches files for 10 minutes. Bump this value (and the ?v= in
   // index.html) whenever you edit content, so visitors get the new files.
-  var VERSION = '6';
+  var VERSION = '7';
 
   function loadJSON(url) {
     return fetch(url + '?v=' + VERSION).then(function (r) {
@@ -203,6 +203,7 @@
     renderSkills();
     renderProjects();
     renderPublications();
+    renderHood();
   }
 
   /* ---------- theme ---------- */
@@ -224,6 +225,7 @@
     root.dataset.theme = theme;
     if (persist) safeSet('theme', theme);
     updateThemeButton();
+    scope.refresh();
   }
 
   function initTheme() {
@@ -266,7 +268,7 @@
   function commandList() {
     var cmds = [];
     [['about', 'nav.about'], ['skills', 'nav.skills'], ['projects', 'nav.projects'],
-     ['publications', 'nav.publications'], ['contact', 'nav.contact']].forEach(function (n) {
+     ['publications', 'nav.publications'], ['hood', 'nav.hood'], ['contact', 'nav.contact']].forEach(function (n) {
       cmds.push({
         label: t('palette.go') + ' ' + t(n[1]), group: t('palette.goGroup'),
         keys: n[0] + ' go ir ' + t(n[1]),
@@ -381,6 +383,120 @@
     });
   }
 
+  /* ---------- "Under the hood": live stats + oscilloscope ---------- */
+  var perf = null;
+
+  function measurePage() {
+    try {
+      var entries = performance.getEntriesByType('resource');
+      var nav = performance.getEntriesByType('navigation')[0];
+      var bytes = nav ? (nav.encodedBodySize || 0) : 0;
+      entries.forEach(function (e) { bytes += e.encodedBodySize || e.transferSize || 0; });
+      perf = { n: entries.length + 1, kb: Math.round(bytes / 102.4) / 10 };
+      renderHood();
+    } catch (e) { /* not supported: skip the live row */ }
+  }
+
+  function renderHood() {
+    var list = $('#hood-stats');
+    if (!list) return;
+    list.textContent = '';
+    var rows = (t('hood.stats') || []).slice();
+    if (perf) rows.push({ k: t('hood.liveLabel'), v: t('hood.liveFmt').replace('{n}', perf.n).replace('{kb}', perf.kb) });
+    rows.forEach(function (r) { list.appendChild(el('div', {}, [el('dt', { text: r.k }), el('dd', { text: r.v })])); });
+  }
+
+  var scope = (function () {
+    var canvas, ctx, w = 0, h = 0, raf = 0, visible = false;
+    var mx = 0.35, my = 0.4;
+    var color = '#5cc8ff', bg = '#0f2440';
+    var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function refresh() {
+      var cs = getComputedStyle(root);
+      color = cs.getPropertyValue('--accent').trim() || color;
+      bg = cs.getPropertyValue('--surface').trim() || bg;
+      if (ctx) draw(performance.now());
+    }
+
+    function resize() {
+      var r = canvas.getBoundingClientRect();
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = Math.max(1, Math.round(r.width)); h = Math.max(1, Math.round(r.height));
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      draw(performance.now());
+    }
+
+    function draw(now) {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = bg; ctx.fillRect(0, 0, w, h);
+
+      // graticule: 10 x 6 divisions
+      ctx.strokeStyle = color; ctx.lineWidth = 1;
+      ctx.globalAlpha = 0.16; ctx.beginPath();
+      for (var i = 1; i < 10; i++) { var x = Math.round(w * i / 10) + 0.5; ctx.moveTo(x, 0); ctx.lineTo(x, h); }
+      for (var j = 1; j < 6; j++) { var y = Math.round(h * j / 6) + 0.5; ctx.moveTo(0, y); ctx.lineTo(w, y); }
+      ctx.stroke();
+      ctx.globalAlpha = 0.35; ctx.beginPath();
+      ctx.moveTo(0, Math.round(h / 2) + 0.5); ctx.lineTo(w, Math.round(h / 2) + 0.5);
+      ctx.moveTo(Math.round(w / 2) + 0.5, 0); ctx.lineTo(Math.round(w / 2) + 0.5, h);
+      ctx.stroke();
+
+      // signal: fundamental + 3rd harmonic
+      var freq = 1.5 + mx * 7;              // cycles across the screen
+      var amp = 0.12 + (1 - my) * 0.3;      // fraction of the screen height
+      var phase = reduced ? 0.6 : now * 0.0025;
+      function yAt(xn) {
+        var a = Math.sin(2 * Math.PI * freq * xn + phase);
+        var b = Math.sin(2 * Math.PI * freq * 3 * xn + phase * 1.7) / 3;
+        return h / 2 - (a + b * 0.6) * amp * h;
+      }
+      ctx.lineJoin = 'round';
+      [[6, 0.12], [2, 1]].forEach(function (s) {
+        ctx.lineWidth = s[0]; ctx.globalAlpha = s[1]; ctx.beginPath();
+        for (var px = 0; px <= w; px += 2) { var yy = yAt(px / w); if (px === 0) ctx.moveTo(px, yy); else ctx.lineTo(px, yy); }
+        ctx.stroke();
+      });
+
+      ctx.globalAlpha = 1; ctx.fillStyle = color;
+      ctx.font = '600 12px ui-monospace, Menlo, Consolas, monospace';
+      ctx.fillText('f = ' + (freq * 0.5).toFixed(2) + ' kHz   A = ' + (amp * 6.6).toFixed(2) + ' V', 12, 20);
+    }
+
+    function loop(now) {
+      raf = 0;
+      if (!visible || document.hidden) return;
+      draw(now);
+      raf = requestAnimationFrame(loop);
+    }
+    function start() { if (!raf && !reduced && visible) raf = requestAnimationFrame(loop); }
+
+    function init() {
+      canvas = $('#scope');
+      if (!canvas || !canvas.getContext) return;
+      ctx = canvas.getContext('2d');
+      refresh();
+      resize();
+      if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas);
+      canvas.addEventListener('pointermove', function (e) {
+        var r = canvas.getBoundingClientRect();
+        mx = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+        my = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height));
+        if (reduced) draw(0);
+      });
+      if (window.IntersectionObserver) {
+        new IntersectionObserver(function (entries) {
+          visible = entries[0].isIntersecting;
+          if (visible) start();
+        }).observe(canvas);
+      } else { visible = true; start(); }
+      document.addEventListener('visibilitychange', start);
+    }
+    return { init: init, refresh: refresh };
+  })();
+
   /* ---------- apply language ---------- */
   function setLang(lang, persist) {
     return loadLang(lang).then(function () {
@@ -419,6 +535,9 @@
     initMenu();
     initLangToggle();
     initPalette();
+    scope.init();
+    if (document.readyState === 'complete') setTimeout(measurePage, 300);
+    else window.addEventListener('load', function () { setTimeout(measurePage, 300); });
 
     var lang = initialLang();
     Promise.all([
