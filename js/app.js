@@ -52,7 +52,7 @@
 
   // GitHub Pages caches files for 10 minutes. Bump this value (and the ?v= in
   // index.html) whenever you edit content, so visitors get the new files.
-  var VERSION = '4';
+  var VERSION = '5';
 
   function loadJSON(url) {
     return fetch(url + '?v=' + VERSION).then(function (r) {
@@ -91,6 +91,20 @@
     list.textContent = '';
     (t('hero.highlights') || []).forEach(function (h) {
       list.appendChild(el('li', {}, [el('strong', { text: h.value }), el('span', { text: h.label })]));
+    });
+  }
+
+  // Hardware -> app -> AI "circuit" with animated traces between the nodes.
+  function renderCircuit() {
+    var list = $('#hero-circuit');
+    list.textContent = '';
+    (t('hero.circuit') || []).forEach(function (n, i) {
+      if (i > 0) list.appendChild(el('li', { className: 'wire', attrs: { 'aria-hidden': 'true' } }));
+      list.appendChild(el('li', { className: 'node' }, [
+        el('span', { className: 'node-tag', text: n.tag, attrs: { 'aria-hidden': 'true' } }),
+        el('strong', { text: n.title }),
+        el('span', { className: 'node-items', text: n.items })
+      ]));
     });
   }
 
@@ -184,6 +198,7 @@
 
   function renderDynamic() {
     renderHighlights();
+    renderCircuit();
     renderFacts();
     renderSkills();
     renderProjects();
