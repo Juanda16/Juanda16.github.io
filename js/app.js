@@ -52,7 +52,7 @@
 
   // GitHub Pages caches files for 10 minutes. Bump this value (and the ?v= in
   // index.html) whenever you edit content, so visitors get the new files.
-  var VERSION = '5';
+  var VERSION = '6';
 
   function loadJSON(url) {
     return fetch(url + '?v=' + VERSION).then(function (r) {
@@ -206,14 +206,15 @@
   }
 
   /* ---------- theme ---------- */
-  var THEMES = ['light', 'dark'];
-  var THEME_COLORS = { light: '#f5f6f1', dark: '#0a1a2f' };
+  var THEMES = ['light', 'dark', 'pcb', 'amber'];
+  var THEME_COLORS = { light: '#f5f6f1', dark: '#0a1a2f', pcb: '#06281a', amber: '#0d0900' };
 
   function updateThemeButton() {
     var btn = $('#theme-toggle');
     var theme = root.dataset.theme;
     btn.setAttribute('aria-label', t('a11y.theme').replace('{name}', t('themes.' + theme)));
     btn.title = btn.getAttribute('aria-label');
+    $('#theme-name').textContent = t('themes.' + theme);
     var meta = $('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', THEME_COLORS[theme] || THEME_COLORS.light);
   }

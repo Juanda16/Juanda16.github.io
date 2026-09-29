@@ -190,6 +190,8 @@
   },
   "themes": {
     "light": "Papel",
-    "dark": "Plano técnico"
+    "dark": "Plano técnico",
+    "pcb": "PCB",
+    "amber": "Terminal"
   }
 }

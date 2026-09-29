@@ -190,6 +190,8 @@
   },
   "themes": {
     "light": "Paper",
-    "dark": "Blueprint"
+    "dark": "Blueprint",
+    "pcb": "PCB",
+    "amber": "Terminal"
   }
 }

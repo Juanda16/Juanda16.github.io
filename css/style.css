@@ -69,6 +69,49 @@
   color-scheme: dark;
 }
 
+
+/* pcb = green board, gold traces, silkscreen text */
+:root[data-theme="pcb"] {
+  --bg: #06281a;
+  --grid: rgb(242 201 76 / 0.06);
+  --grid-strong: rgb(242 201 76 / 0.13);
+  --surface: #0a3b25;
+  --surface-alt: rgb(10 59 37 / 0.55);
+  --text: #eaf5e3;
+  --muted: #a8cdb0;
+  --accent: #f2c94c;
+  --accent-strong: #ffe08a;
+  --on-accent: #241a00;
+  --tag-bg: rgb(242 201 76 / 0.1);
+  --border: #1d6a45;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 14px 28px -18px rgb(0 0 0 / 0.7);
+  color-scheme: dark;
+}
+
+/* amber = old CRT terminal */
+:root[data-theme="amber"] {
+  --bg: #0d0900;
+  --grid: rgb(255 176 0 / 0.05);
+  --grid-strong: rgb(255 176 0 / 0.11);
+  --surface: #170f00;
+  --surface-alt: rgb(23 15 0 / 0.6);
+  --text: #ffb000;
+  --muted: #d19200;
+  --accent: #ffcc4d;
+  --accent-strong: #ffe08a;
+  --on-accent: #1a1000;
+  --tag-bg: rgb(255 176 0 / 0.1);
+  --border: #5a3d00;
+  --shadow: none;
+  --font: var(--mono);
+  --radius: 3px;
+  color-scheme: dark;
+}
+:root[data-theme="amber"] body::after {
+  content: ""; position: fixed; inset: 0; z-index: 60; pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgb(0 0 0 / 0.14) 0 1px, transparent 1px 3px);
+}
+
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -181,10 +224,13 @@ a:hover { color: var(--accent-strong); }
 .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
 .icon-btn kbd { display: none; font: inherit; color: var(--muted); }
 
-/* Theme icon: show the icon of the theme you would switch to. */
-.icon-sun { display: none; }
-:root[data-theme="dark"] .icon-sun { display: block; }
-:root[data-theme="dark"] .icon-moon { display: none; }
+/* Theme button: swatch previews the current theme */
+.swatch {
+  width: 1.1rem; height: 1.1rem; border-radius: 50%; flex: none;
+  border: 2px solid currentColor;
+  background: linear-gradient(135deg, var(--accent) 50%, var(--bg) 50%);
+}
+.theme-name { display: none; }
 
 /* Mobile navigation (collapsed by default) */
 .site-nav {
@@ -423,9 +469,6 @@ main { counter-reset: sec; }
 
 /* ---------- Larger screens ---------- */
 @media (min-width: 40rem) {
-  .brand-name { display: inline; }
-  .icon-btn kbd { display: inline; }
-  .icon-btn.palette-btn { padding: 0 0.75rem; }
   /* photo to the right of the name */
   .hero-grid { grid-template-columns: minmax(0, 44rem) auto; justify-content: start; align-items: start; gap: 3rem; }
   .avatar { order: 0; width: 11rem; height: 11rem; margin-top: 1.5rem; }
@@ -440,6 +483,17 @@ main { counter-reset: sec; }
   }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 64rem) {
+  .brand-name { display: inline; }
+  .icon-btn kbd { display: inline; }
+  .icon-btn.palette-btn { padding: 0 0.75rem; }
+}
+
+@media (min-width: 80rem) {
+  .theme-btn { padding: 0 0.75rem; }
+  .theme-name { display: inline; }
 }
 
 @media (min-width: 56rem) {

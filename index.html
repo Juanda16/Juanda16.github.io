@@ -35,15 +35,15 @@
       var root = document.documentElement;
       var theme = null;
       try { theme = localStorage.getItem('theme'); } catch (e) {}
-      if (theme !== 'light' && theme !== 'dark') {
+      if (['light', 'dark', 'pcb', 'amber'].indexOf(theme) === -1) {
         theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
       root.dataset.theme = theme;
       root.classList.add('is-loading');
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=5">
-  <script src="js/app.js?v=5" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=6">
+  <script src="js/app.js?v=6" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
@@ -76,9 +76,9 @@
           <kbd id="palette-kbd" aria-hidden="true">Ctrl K</kbd>
         </button>
 
-        <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch theme">
-          <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-          <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <button type="button" id="theme-toggle" class="icon-btn theme-btn" aria-label="Switch theme">
+          <span class="swatch" aria-hidden="true"></span>
+          <span id="theme-name" class="theme-name" aria-hidden="true"></span>
         </button>
 
         <button type="button" id="menu-toggle" class="icon-btn menu-btn" aria-expanded="false" aria-controls="site-nav" data-i18n-attr="aria-label:a11y.menu" aria-label="Menu">
