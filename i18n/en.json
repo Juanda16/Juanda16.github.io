@@ -19,8 +19,7 @@
     "skills": "Skills",
     "projects": "Projects",
     "publications": "Publications",
-    "contact": "Contact",
-    "hood": "Under the hood"
+    "contact": "Contact"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -194,31 +193,5 @@
     "dark": "Blueprint",
     "pcb": "PCB",
     "amber": "Terminal"
-  },
-  "hood": {
-    "title": "Under the hood",
-    "intro": "No frameworks, no build step, no trackers. This is what is running right now.",
-    "stats": [
-      {
-        "k": "Dependencies",
-        "v": "0"
-      },
-      {
-        "k": "Build step",
-        "v": "none"
-      },
-      {
-        "k": "Languages",
-        "v": "EN / ES from JSON files"
-      },
-      {
-        "k": "Themes",
-        "v": "4, made with CSS variables"
-      }
-    ],
-    "liveLabel": "This page load",
-    "liveFmt": "{n} requests · {kb} KB",
-    "scopeCaption": "Move the pointer over the scope: X changes the frequency, Y the amplitude.",
-    "scopeLabel": "Decorative oscilloscope animation showing a sine wave"
   }
 }

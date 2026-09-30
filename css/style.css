@@ -428,24 +428,6 @@ main { counter-reset: sec; }
 .plain-list li:first-child { padding-top: 0; }
 .plain-list small { display: block; color: var(--muted); font-family: var(--mono); font-size: 0.8rem; }
 
-
-/* Under the hood */
-.hood { display: grid; gap: 2rem; }
-.stats { margin: 0; border-top: 1px solid var(--border); }
-.stats > div {
-  display: flex; justify-content: space-between; gap: 1rem; padding: 0.65rem 0;
-  border-bottom: 1px solid var(--border); font: 500 0.9rem/1.5 var(--mono);
-}
-.stats dt { color: var(--muted); }
-.stats dd { margin: 0; text-align: right; color: var(--accent-strong); }
-.scope { margin: 0; }
-.scope canvas {
-  display: block; width: 100%; aspect-ratio: 16 / 9;
-  border: 1px solid var(--accent); border-radius: var(--radius);
-  background: var(--surface); touch-action: pan-y; cursor: crosshair;
-}
-.scope figcaption { margin-top: 0.6rem; color: var(--muted); font: 500 0.8rem/1.5 var(--mono); }
-
 /* Contact */
 .contact-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .contact-mail { margin-top: 1.25rem; font-family: var(--mono); }
@@ -529,7 +511,6 @@ main { counter-reset: sec; }
   .about-grid { grid-template-columns: 1.4fr 1fr; gap: 3rem; }
   .skills-grid { grid-template-columns: repeat(3, 1fr); }
   .two-col { grid-template-columns: 1.3fr 1fr; gap: 4rem; }
-  .hood { grid-template-columns: 1fr 1.1fr; gap: 3.5rem; align-items: center; }
 }
 
 /* ---------- Preferences ---------- */

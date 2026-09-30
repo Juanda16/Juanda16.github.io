@@ -19,8 +19,7 @@
     "skills": "Skills",
     "projects": "Proyectos",
     "publications": "Publicaciones",
-    "contact": "Contacto",
-    "hood": "Bajo el capó"
+    "contact": "Contacto"
   },
   "hero": {
     "greeting": "Hola, soy",
@@ -194,31 +193,5 @@
     "dark": "Plano técnico",
     "pcb": "PCB",
     "amber": "Terminal"
-  },
-  "hood": {
-    "title": "Bajo el capó",
-    "intro": "Sin frameworks, sin paso de build y sin trackers. Esto es lo que está corriendo ahora mismo.",
-    "stats": [
-      {
-        "k": "Dependencias",
-        "v": "0"
-      },
-      {
-        "k": "Paso de build",
-        "v": "ninguno"
-      },
-      {
-        "k": "Idiomas",
-        "v": "EN / ES desde archivos JSON"
-      },
-      {
-        "k": "Temas",
-        "v": "4, hechos con variables CSS"
-      }
-    ],
-    "liveLabel": "Esta carga de página",
-    "liveFmt": "{n} solicitudes · {kb} KB",
-    "scopeCaption": "Mueve el puntero sobre el osciloscopio: X cambia la frecuencia y Y la amplitud.",
-    "scopeLabel": "Animación decorativa de un osciloscopio con una onda senoidal"
   }
 }
