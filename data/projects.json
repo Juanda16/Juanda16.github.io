@@ -1,7 +1,19 @@
 [
   {
     "id": "tomate",
-    "tags": [],
+    "tags": [
+      "n8n",
+      "VPS",
+      "WhatsApp",
+      "Evolution API",
+      "Node.js",
+      "Claude",
+      "Gemini",
+      "Supabase",
+      "APIs",
+      "Sentry",
+      "Amplitude"
+    ],
     "links": [
       {
         "label": "tomate.tech",
@@ -13,7 +25,17 @@
     "id": "separados",
     "tags": [
       "AI agents",
-      "WhatsApp bots"
+      "WhatsApp bots",
+      "n8n",
+      "Kapso",
+      "VPS",
+      "Node.js",
+      "Claude",
+      "Gemini",
+      "Supabase",
+      "APIs",
+      "Sentry",
+      "Amplitude"
     ],
     "links": [
       {

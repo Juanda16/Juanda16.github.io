@@ -52,7 +52,7 @@
 
   // GitHub Pages caches files for 10 minutes. Bump this value (and the ?v= in
   // index.html) whenever you edit content, so visitors get the new files.
-  var VERSION = '12';
+  var VERSION = '13';
 
   function loadJSON(url) {
     return fetch(url + '?v=' + VERSION).then(function (r) {
