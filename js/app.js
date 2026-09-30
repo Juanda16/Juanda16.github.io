@@ -52,7 +52,7 @@
 
   // GitHub Pages caches files for 10 minutes. Bump this value (and the ?v= in
   // index.html) whenever you edit content, so visitors get the new files.
-  var VERSION = '10';
+  var VERSION = '12';
 
   function loadJSON(url) {
     return fetch(url + '?v=' + VERSION).then(function (r) {
@@ -132,39 +132,6 @@
     });
   }
 
-  var VENTURES = [
-    { id: 'tomate', url: 'https://tomate.tech', host: 'tomate.tech' },
-    { id: 'separados', url: 'https://separados.co', host: 'separados.co' }
-  ];
-
-  function renderVentures() {
-    var grid = $('#ventures-grid');
-    if (!grid) return;
-    grid.textContent = '';
-    VENTURES.forEach(function (v, i) {
-      var base = 'ventures.items.' + v.id + '.';
-      var tags = t(base + 'tags') || [];
-      var body = [
-        el('h3', { text: t(base + 'title') }),
-        el('p', { text: t(base + 'desc') })
-      ];
-      if (tags.length) body.push(pinout(tags));
-      body.push(el('div', { className: 'project-links' }, [
-        el('a', {
-          text: v.host + ' ↗',
-          attrs: { href: v.url, target: '_blank', rel: 'noopener noreferrer', 'aria-label': t('ventures.visit') + ' ' + v.host }
-        })
-      ]));
-      grid.appendChild(el('article', { className: 'project' }, [
-        el('div', { className: 'ds-head' }, [
-          el('span', { className: 'ds-ref', text: 'EXP-' + String(i + 1).padStart(3, '0'), attrs: { 'aria-hidden': 'true' } }),
-          el('span', { className: 'ds-kind', text: t(base + 'kind') })
-        ]),
-        el('div', { className: 'ds-body' }, body)
-      ]));
-    });
-  }
-
   function renderProjects() {
     var grid = $('#projects-grid');
     grid.textContent = '';
@@ -189,7 +156,11 @@
 
       grid.appendChild(el('article', { className: 'project' }, [
         el('div', { className: 'ds-head' }, [
-          el('span', { className: 'ds-ref', text: 'JA-' + String(i + 1).padStart(3, '0') + ' · REV A', attrs: { 'aria-hidden': 'true' } }),
+          el('span', { className: 'ds-ref', attrs: { 'aria-hidden': 'true' } }, [
+            el('span', { className: 'ref-pre', text: 'JA-0' }),
+            el('span', { text: String(i + 1).padStart(2, '0') }),
+            el('span', { className: 'ref-rev', text: ' · REV A' })
+          ]),
           el('span', { className: 'ds-kind', text: t(base + 'kind') })
         ]),
         el('div', { className: 'ds-body' }, [
@@ -219,14 +190,13 @@
     renderHighlights();
     renderFacts();
     renderSkills();
-    renderVentures();
     renderProjects();
     renderPublications();
   }
 
   /* ---------- theme ---------- */
-  var THEMES = ['light', 'dark', 'pcb', 'amber'];
-  var THEME_COLORS = { light: '#f5f6f1', dark: '#0a1a2f', pcb: '#06281a', amber: '#0d0900' };
+  var THEMES = ['light', 'dark', 'paper', 'blueprint', 'pcb', 'amber'];
+  var THEME_COLORS = { light: '#fafaf9', dark: '#0d1114', paper: '#f5f6f1', blueprint: '#0a1a2f', pcb: '#06281a', amber: '#0d0900' };
 
   function updateThemeButton() {
     var btn = $('#theme-toggle');
@@ -284,7 +254,7 @@
 
   function commandList() {
     var cmds = [];
-    [['about', 'nav.about'], ['skills', 'nav.skills'], ['experience', 'nav.experience'], ['projects', 'nav.projects'],
+    [['about', 'nav.about'], ['skills', 'nav.skills'], ['projects', 'nav.projects'],
      ['publications', 'nav.publications'], ['contact', 'nav.contact']].forEach(function (n) {
       cmds.push({
         label: t('palette.go') + ' ' + t(n[1]), group: t('palette.goGroup'),

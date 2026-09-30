@@ -1,36 +1,156 @@
 [
-  { "id": "tokenpad", "tags": ["Flutter", "Dart", "Bloc", "Firebase", "Clean Architecture", "TDD", "CI/CD"], "links": [] },
-  { "id": "lexipol", "tags": ["Flutter", "Dart", "Riverpod", "AWS Amplify Cognito", "Pendo", "Scrum"], "links": [] },
-  { "id": "headspace", "tags": ["Mobile", "iOS", "Android"], "links": [] },
   {
-    "id": "mobe",
-    "tags": ["Flutter", "Node.js", "MongoDB", "Git"],
+    "id": "tomate",
+    "tags": [],
     "links": [
-      { "label": "mobe", "url": "https://github.com/Juanda16/mobe" },
-      { "label": "mobe-front_end", "url": "https://github.com/Juanda16/mobe-front_end" },
-      { "label": "mobe-backend", "url": "https://github.com/Juanda16/mobe-backend" }
+      {
+        "label": "tomate.tech",
+        "url": "https://tomate.tech"
+      }
     ]
   },
-  { "id": "ram", "tags": ["Python", "Node.js", "Arduino", "Raspberry Pi", "Jetson Nano"], "links": [] },
-  { "id": "cnc", "tags": ["C++", "Arduino", "Python", "Robotics"], "links": [] },
+  {
+    "id": "separados",
+    "tags": [
+      "AI agents",
+      "WhatsApp bots"
+    ],
+    "links": [
+      {
+        "label": "separados.co",
+        "url": "https://separados.co"
+      }
+    ]
+  },
+  {
+    "id": "tokenpad",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "Bloc",
+      "Firebase",
+      "Clean Architecture",
+      "TDD",
+      "CI/CD"
+    ],
+    "links": []
+  },
+  {
+    "id": "lexipol",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "Riverpod",
+      "AWS Amplify Cognito",
+      "Pendo",
+      "Scrum"
+    ],
+    "links": []
+  },
+  {
+    "id": "headspace",
+    "tags": [
+      "Mobile",
+      "iOS",
+      "Android"
+    ],
+    "links": []
+  },
+  {
+    "id": "mobe",
+    "tags": [
+      "Flutter",
+      "Node.js",
+      "MongoDB",
+      "Git"
+    ],
+    "links": [
+      {
+        "label": "mobe",
+        "url": "https://github.com/Juanda16/mobe"
+      },
+      {
+        "label": "mobe-front_end",
+        "url": "https://github.com/Juanda16/mobe-front_end"
+      },
+      {
+        "label": "mobe-backend",
+        "url": "https://github.com/Juanda16/mobe-backend"
+      }
+    ]
+  },
+  {
+    "id": "ram",
+    "tags": [
+      "Python",
+      "Node.js",
+      "Arduino",
+      "Raspberry Pi",
+      "Jetson Nano"
+    ],
+    "links": []
+  },
+  {
+    "id": "cnc",
+    "tags": [
+      "C++",
+      "Arduino",
+      "Python",
+      "Robotics"
+    ],
+    "links": []
+  },
   {
     "id": "tennis",
-    "tags": ["Flutter", "Dart"],
-    "links": [{ "label": "tennis-court-scheduling", "url": "https://github.com/Juanda16/tennis-court-scheduling" }]
+    "tags": [
+      "Flutter",
+      "Dart"
+    ],
+    "links": [
+      {
+        "label": "tennis-court-scheduling",
+        "url": "https://github.com/Juanda16/tennis-court-scheduling"
+      }
+    ]
   },
   {
     "id": "hotel",
-    "tags": ["Python", "Machine Learning"],
-    "links": [{ "label": "prediccion_cancelaciones_hoteles", "url": "https://github.com/Juanda16/prediccion_cancelaciones_hoteles" }]
+    "tags": [
+      "Python",
+      "Machine Learning"
+    ],
+    "links": [
+      {
+        "label": "prediccion_cancelaciones_hoteles",
+        "url": "https://github.com/Juanda16/prediccion_cancelaciones_hoteles"
+      }
+    ]
   },
   {
     "id": "digits",
-    "tags": ["Python", "Jupyter", "AI"],
-    "links": [{ "label": "ai-digit-recognizer", "url": "https://github.com/Juanda16/ai-digit-recognizer" }]
+    "tags": [
+      "Python",
+      "Jupyter",
+      "AI"
+    ],
+    "links": [
+      {
+        "label": "ai-digit-recognizer",
+        "url": "https://github.com/Juanda16/ai-digit-recognizer"
+      }
+    ]
   },
   {
     "id": "voting",
-    "tags": ["Solidity", "Blockchain"],
-    "links": [{ "label": "voting", "url": "https://github.com/Juanda16/voting" }]
+    "tags": [
+      "Solidity",
+      "Blockchain"
+    ],
+    "links": [
+      {
+        "label": "voting",
+        "url": "https://github.com/Juanda16/voting"
+      }
+    ]
   }
 ]

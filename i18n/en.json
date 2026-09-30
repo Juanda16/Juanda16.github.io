@@ -17,7 +17,6 @@
   "nav": {
     "about": "About",
     "skills": "Skills",
-    "experience": "Experience",
     "projects": "Projects",
     "publications": "Publications",
     "contact": "Contact"
@@ -83,6 +82,16 @@
     "viewRepo": "View repository on GitHub:",
     "private": "Private source",
     "items": {
+      "tomate": {
+        "kind": "Founder",
+        "title": "Tomate",
+        "desc": "Founder of Tomate, a technology venture."
+      },
+      "separados": {
+        "kind": "Technical partner",
+        "title": "Separados",
+        "desc": "Technical side of the project: I design and build AI agents and WhatsApp bots."
+      },
       "tokenpad": {
         "kind": "Production app",
         "title": "Tokenpad — crypto mobile app",
@@ -172,32 +181,11 @@
     "helpGroup": "Info"
   },
   "themes": {
-    "light": "Paper",
-    "dark": "Blueprint",
+    "light": "Light",
+    "dark": "Dark",
+    "paper": "Paper",
+    "blueprint": "Blueprint",
     "pcb": "PCB",
     "amber": "Terminal"
-  },
-  "ventures": {
-    "title": "Experience",
-    "intro": "Ventures where I build and lead the technology.",
-    "visit": "Visit",
-    "kindLabel": "Venture",
-    "items": {
-      "tomate": {
-        "kind": "Founder",
-        "title": "Tomate",
-        "desc": "Founder of Tomate, a technology venture.",
-        "tags": []
-      },
-      "separados": {
-        "kind": "Technical partner",
-        "title": "Separados",
-        "desc": "Technical side of the project: I design and build AI agents and WhatsApp bots.",
-        "tags": [
-          "AI agents",
-          "WhatsApp bots"
-        ]
-      }
-    }
   }
 }

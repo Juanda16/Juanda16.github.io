@@ -17,7 +17,6 @@
   "nav": {
     "about": "Sobre mí",
     "skills": "Skills",
-    "experience": "Experiencia",
     "projects": "Proyectos",
     "publications": "Publicaciones",
     "contact": "Contacto"
@@ -83,6 +82,16 @@
     "viewRepo": "Ver repositorio en GitHub:",
     "private": "Código privado",
     "items": {
+      "tomate": {
+        "kind": "Fundador",
+        "title": "Tomate",
+        "desc": "Fundador de Tomate, un emprendimiento de tecnología."
+      },
+      "separados": {
+        "kind": "Socio técnico",
+        "title": "Separados",
+        "desc": "Parte técnica del proyecto: diseño y desarrollo de agentes de IA y bots de WhatsApp."
+      },
       "tokenpad": {
         "kind": "App en producción",
         "title": "Tokenpad — app móvil de criptomonedas",
@@ -172,32 +181,11 @@
     "helpGroup": "Info"
   },
   "themes": {
-    "light": "Papel",
-    "dark": "Plano técnico",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "paper": "Papel",
+    "blueprint": "Plano técnico",
     "pcb": "PCB",
     "amber": "Terminal"
-  },
-  "ventures": {
-    "title": "Experiencia",
-    "intro": "Emprendimientos donde construyo y lidero la tecnología.",
-    "visit": "Visitar",
-    "kindLabel": "Emprendimiento",
-    "items": {
-      "tomate": {
-        "kind": "Fundador",
-        "title": "Tomate",
-        "desc": "Fundador de Tomate, un emprendimiento de tecnología.",
-        "tags": []
-      },
-      "separados": {
-        "kind": "Socio técnico",
-        "title": "Separados",
-        "desc": "Parte técnica del proyecto: diseño y desarrollo de agentes de IA y bots de WhatsApp.",
-        "tags": [
-          "Agentes de IA",
-          "Bots de WhatsApp"
-        ]
-      }
-    }
   }
 }
