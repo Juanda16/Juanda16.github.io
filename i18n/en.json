@@ -42,24 +42,6 @@
         "value": "500+",
         "label": "downloads in ~1.5 months for my own startup"
       }
-    ],
-    "circuitLabel": "From hardware to mobile to AI",
-    "circuit": [
-      {
-        "tag": "HW",
-        "title": "Hardware",
-        "items": "C++ · Arduino · Jetson Nano"
-      },
-      {
-        "tag": "APP",
-        "title": "Mobile & backend",
-        "items": "Flutter · Dart · Node.js · Python"
-      },
-      {
-        "tag": "AI",
-        "title": "AI-assisted",
-        "items": "Claude · ML · automation"
-      }
     ]
   },
   "about": {

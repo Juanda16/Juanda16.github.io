@@ -42,24 +42,6 @@
         "value": "500+",
         "label": "descargas en ~1,5 meses en mi propia startup"
       }
-    ],
-    "circuitLabel": "Del hardware al móvil y a la IA",
-    "circuit": [
-      {
-        "tag": "HW",
-        "title": "Hardware",
-        "items": "C++ · Arduino · Jetson Nano"
-      },
-      {
-        "tag": "APP",
-        "title": "Móvil y backend",
-        "items": "Flutter · Dart · Node.js · Python"
-      },
-      {
-        "tag": "AI",
-        "title": "Asistido por IA",
-        "items": "Claude · ML · automatización"
-      }
     ]
   },
   "about": {

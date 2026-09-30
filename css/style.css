@@ -289,34 +289,6 @@ a:hover { color: var(--accent-strong); }
 .highlights strong { display: block; font-size: 1.7rem; line-height: 1.2; letter-spacing: -0.02em; font-family: var(--mono); }
 .highlights span { color: var(--muted); font-size: 0.95rem; }
 
-
-/* Hero "circuit": hardware -> mobile & backend -> AI */
-.circuit-list { display: flex; flex-direction: column; align-items: stretch; margin-top: 2.5rem; }
-.node {
-  position: relative; display: flex; flex-direction: column; gap: 0.15rem;
-  padding: 0.9rem 1.1rem; border: 2px solid var(--accent); border-radius: 6px;
-  background: var(--surface);
-}
-/* IC pins on both sides */
-.node::before, .node::after {
-  content: ""; position: absolute; top: 0.6rem; bottom: 0.6rem; width: 7px;
-  background: repeating-linear-gradient(to bottom, var(--accent) 0 6px, transparent 6px 13px);
-}
-.node::before { left: -9px; }
-.node::after { right: -9px; }
-.node-tag { color: var(--accent); font: 700 0.72rem/1 var(--mono); letter-spacing: 0.12em; }
-.node strong { font-size: 1.05rem; }
-.node-items { color: var(--muted); font: 500 0.82rem/1.5 var(--mono); }
-.wire {
-  align-self: center; width: 2px; height: 2.25rem;
-  background: repeating-linear-gradient(to bottom, var(--accent) 0 6px, transparent 6px 12px);
-  background-size: 2px 12px;
-  animation: flow-y 0.9s linear infinite;
-}
-@keyframes flow-y { to { background-position: 0 12px; } }
-@keyframes flow-x { to { background-position: 12px 0; } }
-.circuit-list + .highlights { margin-top: 1.5rem; }
-
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -473,14 +445,6 @@ main { counter-reset: sec; }
   .hero-grid { grid-template-columns: minmax(0, 44rem) auto; justify-content: start; align-items: start; gap: 3rem; }
   .avatar { order: 0; width: 11rem; height: 11rem; margin-top: 1.5rem; }
   .highlights { grid-template-columns: repeat(3, 1fr); }
-  .circuit-list { flex-direction: row; align-items: stretch; padding-inline: 9px; }
-  .node { flex: 1 1 0; }
-  .wire {
-    flex: 0 0 3.25rem; align-self: center; width: auto; height: 2px;
-    background: repeating-linear-gradient(to right, var(--accent) 0 6px, transparent 6px 12px);
-    background-size: 12px 2px;
-    animation-name: flow-x;
-  }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
