@@ -42,8 +42,8 @@
       root.classList.add('is-loading');
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=8">
-  <script src="js/app.js?v=8" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=10">
+  <script src="js/app.js?v=10" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
@@ -59,6 +59,7 @@
         <ul>
           <li><a href="#about" data-i18n="nav.about">About</a></li>
           <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
           <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
           <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -140,7 +141,15 @@
       </div>
     </section>
 
-    <section id="projects" class="section" aria-labelledby="projects-title">
+    <section id="experience" class="section" aria-labelledby="exp-title">
+      <div class="container">
+        <h2 id="exp-title" class="section-title" data-i18n="ventures.title">Experience</h2>
+        <p class="section-intro" data-i18n="ventures.intro"></p>
+        <div class="projects-grid" id="ventures-grid"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-alt" aria-labelledby="projects-title">
       <div class="container">
         <h2 id="projects-title" class="section-title" data-i18n="projects.title">Projects</h2>
         <p class="section-intro" data-i18n="projects.intro"></p>
@@ -148,7 +157,7 @@
       </div>
     </section>
 
-    <section id="publications" class="section section-alt" aria-labelledby="pubs-title">
+    <section id="publications" class="section" aria-labelledby="pubs-title">
       <div class="container two-col">
         <div>
           <h2 id="pubs-title" class="section-title" data-i18n="publications.title">Publications</h2>
@@ -161,7 +170,7 @@
       </div>
     </section>
 
-    <section id="contact" class="section" aria-labelledby="contact-title">
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title">
       <div class="container contact">
         <h2 id="contact-title" class="section-title" data-i18n="contact.title">Contact</h2>
         <p class="section-intro" data-i18n="contact.text"></p>

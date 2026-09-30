@@ -17,6 +17,7 @@
   "nav": {
     "about": "Sobre mí",
     "skills": "Skills",
+    "experience": "Experiencia",
     "projects": "Proyectos",
     "publications": "Publicaciones",
     "contact": "Contacto"
@@ -175,5 +176,28 @@
     "dark": "Plano técnico",
     "pcb": "PCB",
     "amber": "Terminal"
+  },
+  "ventures": {
+    "title": "Experiencia",
+    "intro": "Emprendimientos donde construyo y lidero la tecnología.",
+    "visit": "Visitar",
+    "kindLabel": "Emprendimiento",
+    "items": {
+      "tomate": {
+        "kind": "Fundador",
+        "title": "Tomate",
+        "desc": "Fundador de Tomate, un emprendimiento de tecnología.",
+        "tags": []
+      },
+      "separados": {
+        "kind": "Socio técnico",
+        "title": "Separados",
+        "desc": "Parte técnica del proyecto: diseño y desarrollo de agentes de IA y bots de WhatsApp.",
+        "tags": [
+          "Agentes de IA",
+          "Bots de WhatsApp"
+        ]
+      }
+    }
   }
 }

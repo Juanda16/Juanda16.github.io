@@ -462,6 +462,13 @@ main { counter-reset: sec; }
 
 @media (min-width: 56rem) {
   .avatar { width: 15rem; height: 15rem; margin-top: 0.5rem; }
+  .about-grid { grid-template-columns: 1.4fr 1fr; gap: 3rem; }
+  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+  .two-col { grid-template-columns: 1.3fr 1fr; gap: 4rem; }
+}
+
+/* Inline nav only when it fits on one line (6 items, EN/ES) */
+@media (min-width: 68rem) {
   .menu-btn { display: none; }
   .bar { gap: 1.5rem; }
   .site-nav {
@@ -471,10 +478,7 @@ main { counter-reset: sec; }
   .site-nav ul { display: flex; gap: 0.25rem; }
   .site-nav a { padding: 0.5rem 0.75rem; border: 0 !important; border-radius: 6px; font-size: 0.95rem; }
   .site-nav a:hover { background: var(--tag-bg); }
-
-  .about-grid { grid-template-columns: 1.4fr 1fr; gap: 3rem; }
-  .skills-grid { grid-template-columns: repeat(3, 1fr); }
-  .two-col { grid-template-columns: 1.3fr 1fr; gap: 4rem; }
+  .site-nav a { white-space: nowrap; }
 }
 
 /* ---------- Preferences ---------- */
